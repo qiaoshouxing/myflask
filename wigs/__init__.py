@@ -5,7 +5,7 @@ from flask_bootstrap import Bootstrap
 
 def create_app(test_config=None):
     # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__, instance_relative_config=True, static_folder='assets', static_url_path='/assets')
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'wigs.sqlite'),
@@ -17,10 +17,6 @@ def create_app(test_config=None):
     else:
         # load the test config if passed in
         app.config.from_mapping(test_config)
-
-
-    app.config['STATIC_FOLDER'] = 'assets'
-    app.config['STATIC_URL_PATH'] = '/assets'
 
     # ensure the instance folder exists
     try:
