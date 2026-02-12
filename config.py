@@ -4,8 +4,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Config:
-    STATIC_FOLDER = 'assets'
-    STATIC_URL_PATH = '/assets'
     DEBUG = True
 
 class DevelopmentConfig(Config):
