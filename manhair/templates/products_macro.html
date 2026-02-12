@@ -1,0 +1,38 @@
+{# 定义产品卡片宏 #}
+{% macro product_card(product) -%}
+<div class="swiper-slide" data-animate="animate__fadeIn">
+    <div class="single-product">
+        <div class="row single-product-wrap">
+            <div class="product-image-col">
+                <div class="product-image">
+                    <a href="{{ product.link if product.link and product.link.strip() else 'javascript:void(0)' }}" class="pro-img">
+                        <img src="{{ url_for('static', filename=product.images[0]) }}" class="w-100 img-fluid img1" alt="{{ product.name }}">
+                        <img src="{{ url_for('static', filename=product.images[1]) }}" class="w-100 img-fluid img2" alt="{{ product.name }}">
+                        {% if product.label %}<span class="product-label product-label-{{ product.label.type }} product-label-{{ product.label.position }}">{{ product.label.text }}</span>{% endif %}
+                    </a>
+                    <div class="product-action-wrap">
+                        <div class="product-action">
+                            <a href="javascript:void(0)" class="add-to-wishlist">
+                                <span class="product-icon"><i class="ri-heart-line d-block icon-16 lh-1"></i></span>
+                                <span class="tooltip-text">wishlist</span>
+                            </a>
+                            <a href="javascript:void(0)" class="add-to-cart">
+                                <span class="product-icon">
+                                    <span class="product-bag-icon icon-16"><i class="ri-shopping-bag-3-line d-block lh-1"></i></span>
+                                    <span class="product-loader-icon icon-16"><i class="ri-loader-4-line d-block lh-1"></i></span>
+                                    <span class="product-check-icon icon-16"><i class="ri-check-line d-block lh-1"></i></span>
+                                </span>
+                                <span class="tooltip-text">add to cart</span>
+                            </a>
+                            <a href="#quickview-modal" data-bs-toggle="modal" class="quick-view">
+                                <span class="product-icon"><i class="ri-eye-line d-block icon-16 lh-1"></i></span>
+                                <span class="tooltip-text">quickview</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%- endmacro %}

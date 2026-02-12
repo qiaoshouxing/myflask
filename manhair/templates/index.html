@@ -26,6 +26,7 @@
 
         <!-- main start -->
         <main id="main">
+            <!-- main-slider start -->
             <section class="slider-content primary-bg position-relative">
                 <div class="home-slider swiper" id="home-slider">
                     <div class="swiper-wrapper">
@@ -131,11 +132,343 @@
                     <div class="swiper-pagination swiper-pagination-homeslider d-flex flex-wrap"></div>
                 </div>
             </section>
+            <!-- main-slider end -->
+
+            <!-- banner-area start -->
+            <section class="banner-area section-pt">
+                <div class="container-fluid">
+                    <div class="row row-mtm30">
+                        <div class="col-12 col-md-6 col-xl-3 text-center" data-animate="animate__fadeIn">
+                            <div class="banner-block height-md-100 position-relative banner-hover br-hidden">
+                                <a href="javascript:void(0)" class="d-block banner-img height-md-100">
+                                    <img src="{{ url_for('static', filename='image/banner-1.jpg') }}" class="w-100 height-md-100 img-fluid" alt="banner-1">
+                                </a>
+                                <h2 class="font-24 font-xl-32 position-absolute top-0 start-0 end-0 mst-30 mlr-15 mlr-md-30 section-heading-family text-uppercase section-heading-weight section-heading-lh">T-shirt</h2>
+                                <!--
+                                <div class="position-absolute bottom-0 start-0 end-0 meb-30 mlr-15 mlr-md-30">
+                                    <a href="collection.html" class="btn-style primary-btn">Shop now</a>
+                                </div>
+                                -->
+                            </div>
+                        </div>
+                        <div class="col-12 col-xl-6 order-md-last order-xl-0 text-center" data-animate="animate__fadeIn">
+                            <div class="banner-block banner-hover position-relative d-md-flex align-items-md-center br-hidden">
+                                <a href="javascript:void(0)" class="d-block banner-img overflow-hidden">
+                                    <img src="{{ url_for('static', filename='image/banner-desktop.jpg') }}" class="w-100 height-md-100 img-fluid d-none d-md-block" alt="banner-desktop">
+                                    <img src="{{ url_for('static', filename='image/banner-mobile.jpg') }}" class="w-100 img-fluid d-md-none" alt="banner-mobile">
+                                </a>
+                                <div class="banner-content p-md-absolute start-0 end-0">
+                                    <div class="row">
+                                        <div class="col-12 col-md-6 ms-md-auto">
+                                            <div class="banner-content-info ptb-30 plr-15 plr-xl-30 mer-md-30 primary-bg">
+                                                <div class="banner-content-text extra-color meb-7 meb-sm-11">Men's sale <span class="tertiary-color">20% off!</span></div>
+                                                <h2 class="extra-color font-32 font-sm-40 text-uppercase lh-1" data-text-shadow="Unique">Unique <span class="d-block tertiary-color" data-text-shadow="Shirt's">Shirt's</span></h2>
+                                                <!-- <a href="collection.html" class="btn-style primary-btn mst-10 mst-sm-14">Shop now</a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3 text-center" data-animate="animate__fadeIn">
+                            <div class="banner-block height-md-100 position-relative banner-hover br-hidden">
+                                <a href="javascript:void(0)" class="d-block banner-img height-md-100">
+                                    <img src="{{ url_for('static', filename='image/banner-2.jpg') }}" class="w-100 height-md-100 img-fluid" alt="banner-2">
+                                </a>
+                                <h2 class="font-24 font-xl-32 position-absolute top-0 start-0 end-0 mst-30 mlr-15 mlr-md-30 section-heading-family text-uppercase section-heading-weight section-heading-lh">Handbag</h2>
+                                <div class="position-absolute bottom-0 start-0 end-0 meb-30 mlr-15 mlr-md-30">
+                                    <!-- <a href="collection.html" class="btn-style primary-btn">Shop now</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- banner-area end -->
+            <!-- offer-text start -->
+            <div class="offer-text">
+                <div class="container-fluid">
+                    <div class="offer-text-wrap position-relative ptb-30 text-center">
+                        <p class="heading-color">Only erona fashion store sale up to <span class="heading-weight">70% off</span> end of season!</p>
+                        <span class="offer-text-gif position-absolute z-1"><img src="{{ url_for('static', filename='image/offer-text-katchy.gif') }}" class="width-24 img-fluid" alt="offer-text-katchy"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- offer-text end -->
+            <!-- category-product start -->
+            <section class="category-product section-pt">
+                <div class="container">
+                    <div class="collection-category">
+                        <div class="section-capture text-center">
+                            <div class="section-title" data-animate="animate__fadeIn">
+                                <h2 class="section-heading">Everyday shopping</h2>
+                            </div>
+                        </div>
+                        <div class="collection-wrap">
+                            <div class="collection-product-slider swiper" id="trend-product-slider">
+                                <div class="swiper-wrapper">
+                                    {# 导入宏 #}
+                                    {% from "products_macro.html" import product_card %}
+                                    {# 渲染产品列表 #}
+                                    {% for product in products %}
+                                        {{ product_card(product) }}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="swiper-buttons">
+                                <div class="swiper-buttons-wrap">
+                                    <button type="button" class="swiper-prev swiper-prev-trend-product" aria-label="Arrow previous"><i class="ri-arrow-left-line d-block lh-1"></i></button>
+                                    <button type="button" class="swiper-next swiper-next-trend-product" aria-label="Arrow next"><i class="ri-arrow-right-line d-block lh-1"></i></button>
+                                </div>
+                            </div>
+                            <div class="swiper-dots" data-animate="animate__fadeIn">
+                                <div class="swiper-pagination swiper-pagination-trend-product"></div>
+                            </div>
+                            <div class="swiper-scroll" data-animate="animate__fadeIn">
+                                <div class="swiper-scrollbar swiper-scrollbar-trend-product"></div>
+                            </div>
+                            <div class="view-button d-none" data-animate="animate__fadeIn">
+                                <a href="javascript:void(0)" class="btn-style tertiary-btn">View all item</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- category-product end -->
         </main>
         <!-- main end -->
 
         <!-- footer start -->
-        <footer id="footer"></footer>
+        <footer id="footer">
+            <!-- footer-service start -->
+            <section class="footer-service extra-bg2">
+                <div class="service-area">
+                    <div class="container">
+                        <div class="service-slider swiper" id="service-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="service-content ptb-30 text-center">
+                                        <span class="service-icon icon-24 tertiary-color"><i class="ri-truck-line d-block lh-1"></i></span>
+                                        <div class="service-text mst-25">
+                                            <h6 class="extra-color font-18">Worldwide shipping</h6>
+                                            <p class="mst-8">Worldwide shipping available to deliver fashion right to you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-content ptb-30 text-center">
+                                        <span class="service-icon icon-24 tertiary-color"><i class="ri-lock-line d-block lh-1"></i></span>
+                                        <div class="service-text mst-25">
+                                            <h6 class="extra-color font-18">30 Days secure payment</h6>
+                                            <p class="mst-8">30 days secure payment ensures your purchase stays protected.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-content ptb-30 text-center">
+                                        <span class="service-icon icon-24 tertiary-color"><i class="ri-headphone-line d-block lh-1"></i></span>
+                                        <div class="service-text mst-25">
+                                            <h6 class="extra-color font-18">24/7 live client support</h6>
+                                            <p class="mst-8">24/7 live client support ready to assist anytime you need help.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="service-content ptb-30 text-center">
+                                        <span class="service-icon icon-24 tertiary-color"><i class="ri-percent-line d-block lh-1"></i></span>
+                                        <div class="service-text mst-25">
+                                            <h6 class="extra-color font-18">100% Pure cotton cloths</h6>
+                                            <p class="mst-8">100% pure cotton cloths offering comfort, quality, and style.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- footer-service end -->
+            <!-- footer-top start -->
+            <section class="footer-area section-ptb secondary-bg">
+                <div class="container">
+                    <div class="row row-mtm">
+                        <div class="col-12 col-lg-4">
+                            <div class="footer-news text-center text-lg-start">
+                                <h6 class="extra-color font-18">Our subscribe newsletter</h6>
+                                <p class="mst-21">Subscribe newsletter join to get special offers, free give and once in a life deals!</p>
+                                <form method="post" class="news-form mst-13">
+                                    <div class="news-wrap d-md-flex">
+                                        <input type="email" id="newsletter-email" name="newsletter-email" class="width-100 bg-transparent text-center text-md-start" placeholder="Enter your email" required>
+                                        <button type="submit" class="news-btn width-100 width-md-auto btn-style primary-btn mst-15 mst-md-0 text-nowrap">Subscribe</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="footer-social mst-30">
+                                <ul class="social-ul ul-mt15 justify-content-center justify-content-lg-start">
+                                    <li class="social-li">
+                                        <a href="javascript:void(0)" class="d-block body-color icon-16" aria-label="Social link"><i class="ri-facebook-fill d-block lh-1"></i></a>
+                                    </li>
+                                    <li class="social-li">
+                                        <a href="javascript:void(0)" class="d-block body-color icon-16" aria-label="Social link"><i class="ri-twitter-x-fill d-block lh-1"></i></a>
+                                    </li>
+                                    <li class="social-li">
+                                        <a href="javascript:void(0)" class="d-block body-color icon-16" aria-label="Social link"><i class="ri-linkedin-fill d-block lh-1"></i></a>
+                                    </li>
+                                    <li class="social-li">
+                                        <a href="javascript:void(0)" class="d-block body-color icon-16" aria-label="Social link"><i class="ri-telegram-fill d-block lh-1"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8 order-md-last order-lg-0 footer-list">
+                            <div class="row">
+                                <div class="col-12 col-md-3 ft-list">
+                                    <div class="footer-menu">
+                                        <h6 class="ft-title d-none d-md-block extra-color font-18">Information</h6>
+                                        <a href="#collapse-information" class="ft-title font-18 d-flex d-md-none flex-wrap align-items-center justify-content-between" data-bs-toggle="collapse" aria-expanded="false">
+                                            <span class="ftmenu-title width-calc-16 heading-weight">Information</span>
+                                            <span class="ftmenu-icon width-16 icon-16"><i class="ri-add-line"></i></span>
+                                        </a>
+                                        <div class="ft-link collapse" id="collapse-information">
+                                            <ul class="ftlink-ul ul-ft pst-21 peb-1 peb-md-0">
+                                                <li class="ftlink-li">
+                                                    <a href="about-us.html" class="d-inline-block body-color">About us</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="contact-us.html" class="d-inline-block body-color">Contact us</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="faqs.html" class="d-inline-block body-color">Faqs</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="blog.html" class="d-inline-block body-color">News</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="store.html" class="d-inline-block body-color">Store</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-3 ft-list">
+                                    <div class="footer-menu">
+                                        <h6 class="ft-title d-none d-md-block extra-color font-18">Policies</h6>
+                                        <a href="#collapse-policies" class="ft-title font-18 d-flex d-md-none flex-wrap align-items-center justify-content-between" data-bs-toggle="collapse" aria-expanded="false">
+                                            <span class="ftmenu-title width-calc-16 heading-weight">Policies</span>
+                                            <span class="ftmenu-icon width-16 icon-16"><i class="ri-add-line"></i></span>
+                                        </a>
+                                        <div class="ft-link collapse" id="collapse-policies">
+                                            <ul class="ftlink-ul ul-ft pst-21 peb-1 peb-md-0">
+                                                <li class="ftlink-li">
+                                                    <a href="payment-policy.html" class="d-inline-block body-color">Payment policy</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="privacy-policy.html" class="d-inline-block body-color">Privacy policy</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="return-policy.html" class="d-inline-block body-color">Return policy</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="shipping-policy.html" class="d-inline-block body-color">Shipping policy</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="terms-condition.html" class="d-inline-block body-color">Terms & condition</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-3 ft-list">
+                                    <div class="footer-menu">
+                                        <h6 class="ft-title d-none d-md-block extra-color font-18">Top category</h6>
+                                        <a href="#collapse-top-category" class="ft-title font-18 d-flex d-md-none flex-wrap align-items-center justify-content-between" data-bs-toggle="collapse" aria-expanded="false">
+                                            <span class="ftmenu-title width-calc-16 heading-weight">Top category</span>
+                                            <span class="ftmenu-icon width-16 icon-16"><i class="ri-add-line"></i></span>
+                                        </a>
+                                        <div class="ft-link collapse" id="collapse-top-category">
+                                            <ul class="ftlink-ul ul-ft pst-21 peb-1 peb-md-0">
+                                                <li class="ftlink-li">
+                                                    <a href="collection2.html" class="d-inline-block body-color">Womens wear</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="collection2.html" class="d-inline-block body-color">Mens wear</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="collection2.html" class="d-inline-block body-color">Kids wear</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="collection2.html" class="d-inline-block body-color">Tops and t-shirts</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="collection2.html" class="d-inline-block body-color">Shirts</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-3 ft-list">
+                                    <div class="footer-menu">
+                                        <h6 class="ft-title d-none d-md-block extra-color font-18">Quick link</h6>
+                                        <a href="#collapse-quick-link" class="ft-title font-18 d-flex d-md-none flex-wrap align-items-center justify-content-between" data-bs-toggle="collapse" aria-expanded="false">
+                                            <span class="ftmenu-title width-calc-16 heading-weight">Quick link</span>
+                                            <span class="ftmenu-icon width-16 icon-16"><i class="ri-add-line"></i></span>
+                                        </a>
+                                        <div class="ft-link collapse" id="collapse-quick-link">
+                                            <ul class="ftlink-ul ul-ft pst-21 peb-1 peb-md-0">
+                                                <li class="ftlink-li">
+                                                    <a href="404.html" class="d-inline-block body-color">404</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="coming-soon.html" class="d-inline-block body-color">Comingsoon</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="cookie.html" class="d-inline-block body-color">Cookie</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="legal.html" class="d-inline-block body-color">Legal</a>
+                                                </li>
+                                                <li class="ftlink-li">
+                                                    <a href="sitemap.html" class="d-inline-block body-color">Sitemap</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- footer-top end -->
+            <!-- footer-bottom start -->
+            <div class="copyright ptb-10 secondary-bg bst">
+                <div class="container">
+                    <div class="row align-items-md-center">
+                        <div class="col-12 col-md-4 meb-6 meb-md-0">
+                            <div class="footer-theme-logo text-center text-md-start">
+                                <a href="index.html" class="d-inline-block theme-logo">
+                                    <img src="assets/image/index2/logo.png" class="width-88 width-xl-112 img-fluid" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <div class="text-center">Powered By <a href="https://www.bootstrapmb.com">bootstrapMB</a><sup>TM</sup></div>
+                        </div>
+                        <div class="col-12 col-md-4 mst-8 mst-md-0">
+                            <ul class="payment-ul">
+                                <li class="payment-li ul-mt5 justify-content-center justify-content-md-end">
+                                    <a href="javascript:void(0)" class="d-block"><img src="assets/image/other/paying-visa.png" class="width-40 img-fluid border-radius" alt="paying-visa"></a>
+                                    <a href="javascript:void(0)" class="d-block"><img src="assets/image/other/paying-maestro.png" class="width-40 img-fluid border-radius" alt="paying-maestro"></a>
+                                    <a href="javascript:void(0)" class="d-block"><img src="assets/image/other/paying-american.png" class="width-40 img-fluid border-radius" alt="paying-american"></a>
+                                    <a href="javascript:void(0)" class="d-block"><img src="assets/image/other/paying-paypal.png" class="width-40 img-fluid border-radius" alt="paying-paypal"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- footer-bottom end -->
+        </footer>
         <!-- footer end -->
 
         <!-- plugin js -->
