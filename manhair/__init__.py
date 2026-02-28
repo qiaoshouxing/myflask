@@ -20,26 +20,26 @@ def create_app(config_name = None):
                 'id': 1,
                 'name': 'Pleated skater skirt',
                 'link': '',
-                'images': ['image/hair_product/p-1.jpg']
+                'images': ['image/hair_product/p-1.jpg', 'image/hair_product/p-5.jpg'],
             },
             {
                 'id': 2,
                 'name': 'Tailored blazer jacket',
                 'link': '',
-                'images': ['image/hair_product/p-2.jpg'],
+                'images': ['image/hair_product/p-2.jpg', 'image/hair_product/p-6.jpg'],
                 'label': {'type': 'new', 'text': 'New', 'position': 'left'}
             },
             {
-                'id': 3,
+                'id': 5,
                 'name': 'Girls floral ruffle top',
                 'link': '',
-                'images': ['image/hair_product/p-3.jpg']
+                'images': ['image/hair_product/p-3.jpg', 'image/hair_product/p-5.jpg']
             },
             {
-                'id': 4,
+                'id': 6,
                 'name': 'Tailored blazer jacket',
                 'link': '',
-                'images': ['image/hair_product/p-4.jpg'],
+                'images': ['image/hair_product/p-4.jpg', 'image/hair_product/p-6.jpg'],
                 'label': {'type': 'new', 'text': 'New', 'position': 'left'}
             }
             #{
