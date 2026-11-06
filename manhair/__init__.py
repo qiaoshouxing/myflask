@@ -18,28 +18,62 @@ def create_app(config_name = None):
         products = [
             {
                 'id': 1,
-                'name': 'Pleated skater skirt',
+                'name': 'Classic Full Lace Wig',
                 'link': '',
                 'images': ['image/hair_product/p-1.jpg', 'image/hair_product/p-5.jpg'],
             },
             {
                 'id': 2,
-                'name': 'Tailored blazer jacket',
+                'name': 'Premium Human Hair Toupee',
                 'link': '',
                 'images': ['image/hair_product/p-2.jpg', 'image/hair_product/p-6.jpg'],
                 'label': {'type': 'new', 'text': 'New', 'position': 'left'}
             },
             {
                 'id': 5,
-                'name': 'Girls floral ruffle top',
+                'name': 'Natural Lace Front Wig',
                 'link': '',
                 'images': ['image/hair_product/p-3.jpg', 'image/hair_product/p-5.jpg']
             },
             {
                 'id': 6,
-                'name': 'Tailored blazer jacket',
+                'name': 'Invisible Hair System',
                 'link': '',
                 'images': ['image/hair_product/p-4.jpg', 'image/hair_product/p-6.jpg'],
+                'label': {'type': 'new', 'text': 'New', 'position': 'left'}
+            },
+            {
+                'id': 7,
+                'name': 'Classic Full Lace Wig',
+                'link': '',
+                'images': ['image/hair_product/p-7.jpg', 'image/hair_product/p-8.jpg'],
+                'label': {'type': 'hot', 'text': 'Hot', 'position': 'left'}
+            },
+            {
+                'id': 8,
+                'name': 'Premium Human Hair Toupee',
+                'link': '',
+                'images': ['image/hair_product/p-9.jpg', 'image/hair_product/p-10.jpg'],
+                'label': {'type': 'new', 'text': 'New', 'position': 'left'}
+            },
+            {
+                'id': 9,
+                'name': 'Natural Looking Hair System',
+                'link': '',
+                'images': ['image/hair_product/p-11.jpg', 'image/hair_product/p-12.jpg']
+            },
+            {
+                'id': 10,
+                'name': 'Lace Front Men\'s Wig',
+                'link': '',
+                'images': ['image/hair_product/p-13.jpg', 'image/hair_product/p-14.jpg'],
+                'label': {'type': 'sale', 'text': '-20%', 'position': 'left'}
+            },
+            {
+                'id': 11,
+                'name': 'Invisible Hair Replacement',
+                'link': '',
+                'images': ['image/hair_product/p-15.jpg', 'image/hair_product/p-16.jpg'],
                 'label': {'type': 'new', 'text': 'New', 'position': 'left'}
             }
             #{
