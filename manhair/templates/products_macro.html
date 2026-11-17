@@ -7,7 +7,7 @@
                 <div class="product-image">
                     <a href="{{ product.link if product.link and product.link.strip() else 'javascript:void(0)' }}" class="pro-img">
                         <img src="{{ url_for('static', filename=product.images[0]) }}" class="w-100 img-fluid img1" alt="{{ product.name }}">
-                        <img src="{{ url_for('static', filename=product.images[1]) }}" class="w-100 img-fluid img2" alt="{{ product.name }}">
+                        {% if product.images | length > 1 %}<img src="{{ url_for('static', filename=product.images[1]) }}" class="w-100 img-fluid img2" alt="{{ product.name }}">{% endif %}
                         {% if product.label %}<span class="product-label product-label-{{ product.label.type }} product-label-{{ product.label.position }}">{{ product.label.text }}</span>{% endif %}
                     </a>
                     <div class="product-action-wrap">
